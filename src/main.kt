@@ -42,8 +42,7 @@ fun noRepeats(s: String): Boolean = true
  * @param result A string a verificar
  * @return true se todos os caracteres forem iguais a CORRECT, false caso contrário
  */
-fun allCorrect(result: String): Boolean = false
-
+fun allCorrect(result: String): Boolean = true
 /**
  * Lê uma palavra introduzida pelo utilizador convertida para maiúsculas.
  * Só retorna quando a palavra lida tem o comprimento correto
@@ -55,9 +54,9 @@ fun allCorrect(result: String): Boolean = false
  */
 fun readGuess(length: Int): String {
     while (true) {
-        println("Palavra: ")
+        print("Palavra: ")
         val guess = readln().trim().uppercase()
-        if (guess.length == length && guess in ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")) return guess
+        if (guess.length == length && guess.all { it.isUpperCase() && it.isLetter() }) return guess
         println("palavra inválida")
         continue
     }
