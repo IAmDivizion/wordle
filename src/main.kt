@@ -42,17 +42,16 @@ fun noRepeats(s: String): Boolean = true
  * @param result A string a verificar
  * @return true se todos os caracteres forem iguais a CORRECT, false caso contrário
  */
-fun allCorrect(result: String): Boolean = false
+fun allCorrect(result: String) : Boolean{
 
-/**
- * Lê uma palavra introduzida pelo utilizador convertida para maiúsculas.
- * Só retorna quando a palavra lida tem o comprimento correto
- * e só contém letras maiúsculas.
- * Sugere a introdução da palavra com a mensagem "Palavra: ".
- * Cada palavra não aceite provoca a mensagem "Palavra inválida."
- * @param length O comprimento da palavra a ler
- * @return A palavra lida em maiúsculas
- */
+    for (i in result){
+        if (i != CORRECT){
+            return false  }
+      }
+    return true
+}
+
+
 fun readGuess(length: Int): String = "abcde"
 
 /**
