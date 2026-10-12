@@ -62,9 +62,20 @@ fun readGuess(length: Int): String {
     while (true) {
         print("Palavra: ")
         val guess = readln().trim().uppercase()
-        if (guess.length == length && guess.all { it.isUpperCase() && it.isLetter() }) return guess
-        println("palavra inválida")
-        continue
+        var valid = true
+
+        for (i in guess) {
+            if (i !in 'A'..'Z') {
+                valid = false
+                break
+            }
+        }
+
+        if (guess.length == length && valid) {
+            return guess
+        }
+
+        println("Palavra inválida.")
     }
 }
 /**
