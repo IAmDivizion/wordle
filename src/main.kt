@@ -55,9 +55,9 @@ fun allCorrect(result: String): Boolean = false
  */
 fun readGuess(length: Int): String {
     while (true) {
-        println("Palavra: ")
+        print("Palavra: ")
         val guess = readln().trim().uppercase()
-        if (guess.length == length && guess in ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")) return guess
+        if (guess.length == length && guess.all { it.isUpperCase() && it.isLetter() }) return guess
         println("palavra inválida")
         continue
     }
