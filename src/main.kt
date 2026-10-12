@@ -51,8 +51,25 @@ fun allCorrect(result: String) : Boolean{
     return true
 }
 
-fun readGuess(length: Int): String = "abcde"
+/**
+ * Lê uma palavra introduzida pelo utilizador convertida para maiúsculas.
+ * Só retorna quando a palavra lida tem o comprimento correto
+ * e só contém letras maiúsculas.
+ * Sugere a introdução da palavra com a mensagem "Palavra: ".
+ * Cada palavra não aceite provoca a mensagem "Palavra inválida."
+ * @param length O comprimento da palavra a ler
+ * @return A palavra lida em maiúsculas
+ */
 
+fun readGuess(length: Int): String {
+    while (true) {
+        print("Palavra: ")
+        val guess = readln().trim().uppercase()
+        if (guess.length == length && guess.all { it.isUpperCase() && it.isLetter() }) return guess
+        println("palavra inválida")
+        continue
+    }
+}
 /**
  * Obtém o resultado da tentativa com base na palavra secreta e na tentativa do utilizador
  * @param secret A palavra secreta
