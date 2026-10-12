@@ -44,10 +44,7 @@ fun noRepeats(s: String): Boolean = true
  */
 fun allCorrect(result: String) : Boolean{
 
-    for (i in result){
-        if (i != CORRECT){
-            return false  }
-    }
+    for (i in result){ if (i != CORRECT) return false }
     return true
 }
 
