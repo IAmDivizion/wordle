@@ -35,7 +35,14 @@ val words = listOf(
  * @param s A string a verificar
  * @return true se não houver caracteres repetidos, false caso contrário
  */
-fun noRepeats(s: String): Boolean = true
+fun noRepeats(s: String): Boolean {
+    var checked = ""
+    for (c in s) {
+        if (c in checked) return false
+        checked += c
+    }
+    return true
+}
 
 /**
  * Verifica se todos os caracteres da string result são iguais a CORRECT
